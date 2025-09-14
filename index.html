@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JamsTech Technology Services – Présentation</title>
+  <meta name="description" content="JamsTech Technology Services – Services informatiques: décodage de téléphone, réparation d’ordinateurs, maintenance de laboratoires, caméras de surveillance, Wi‑Fi d’entreprise, design graphique. WhatsApp +509 49463122 – jamstech8@gmail.com"/>
+  <style>
+    :root{
+      --primary:#04b1c7; /* cyan */
+      --accent:#f7a60a;  /* amber */
+      --dark:#0f172a;    /* slate-900 */
+      --light:#f8fafc;   /* slate-50 */
+      --muted:#64748b;   /* slate-500 */
+      --ok:#16a34a;
+      --danger:#e11d48;
+      --shadow:0 10px 25px rgba(2,8,23,.08);
+      --radius:18px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif;color:var(--dark);background:linear-gradient(180deg,#ffffff 0%, #f6fbfd 70%, #ffffff 100%)}
+    a{color:var(--primary);text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Layout */
+    header{
+      position:sticky;top:0;z-index:5;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(10px);
+      border-bottom:1px solid #e2e8f0;
+    }
+    .wrap{max-width:1100px;margin:0 auto;padding:20px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    @media (max-width:900px){.row{grid-template-columns:1fr}}
+
+    /* Brand */
+    .brand{display:flex;align-items:center;gap:14px}
+    .brand-logo{width:42px;height:42px}
+    .brand-title{font-weight:800;letter-spacing:.4px}
+    .brand-title span{display:block;line-height:1}
+    .brand-title .big{font-size:18px}
+    .brand-title .small{font-size:12px;color:var(--muted)}
+
+    /* Hero */
+    .hero{padding:36px 0 14px}
+    .hero-card{
+      display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:28px
+    }
+    @media (max-width:900px){.hero-card{grid-template-columns:1fr}}
+    .slogan{font-size:28px;font-weight:800;line-height:1.2;margin:0}
+    .sub{color:var(--muted);margin:8px 0 16px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 16px;border-radius:14px;border:1px solid transparent;cursor:pointer;font-weight:700}
+    .btn.primary{background:var(--primary);color:#fff}
+    .btn.accent{background:var(--accent);color:#fff}
+    .btn.ghost{background:#fff;border-color:#e2e8f0;color:var(--dark)}
+    .btn:hover{transform:translateY(-1px);box-shadow:var(--shadow)}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:#e6f9fc;border:1px dashed #bae6fd;color:#036672;border-radius:999px;padding:6px 10px;font-size:12px}
+
+    /* Sections */
+    section{padding:36px 0}
+    h2{margin:0 0 14px;font-size:22px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:680px){.grid{grid-template-columns:1fr}}
+
+    .card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;border:1px solid #e2e8f0;display:flex;flex-direction:column}
+    .card .icon{width:54px;height:54px;border-radius:14px;background:linear-gradient(135deg,#e6faff,#d1f2ff);display:grid;place-items:center;margin-bottom:12px}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .card p{margin:0 0 12px;color:var(--muted)}
+    .chip{font-size:12px;background:#f1f5f9;color:#0f172a;border-radius:999px;padding:6px 10px;margin-right:6px}
+
+    /* Steps */
+    .steps{counter-reset:step}
+    .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:14px;box-shadow:var(--shadow)}
+    .step-num{min-width:34px;min-height:34px;border-radius:10px;background:var(--primary);color:#fff;display:grid;place-items:center;font-weight:800}
+    .step h4{margin:2px 0 6px}
+
+    /* Forms */
+    form{display:grid;gap:10px}
+    input,textarea{padding:12px 14px;border-radius:12px;border:1px solid #cbd5e1;outline:none}
+    textarea{min-height:120px;resize:vertical}
+    .success{color:var(--ok);font-weight:700}
+
+    /* Chat */
+    .chat{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:var(--shadow);display:grid;grid-template-rows:auto 1fr auto;height:420px}
+    .chat-header{padding:10px 14px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+    .chat-log{padding:14px;overflow:auto;display:flex;flex-direction:column;gap:8px}
+    .msg{max-width:80%;padding:10px 12px;border-radius:14px;border:1px solid #e2e8f0}
+    .msg.agent{align-self:flex-start;background:#f8fafc}
+    .msg.user{align-self:flex-end;background:#e6fff3;border-color:#bbf7d0}
+    .chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid #e2e8f0}
+    .chat-input input{flex:1}
+
+    /* Footer */
+    footer{margin-top:24px;padding:24px 0;border-top:1px solid #e2e8f0;color:#334155;background:#fbfdff}
+    .foot-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    @media (max-width:700px){.foot-grid{grid-template-columns:1fr}}
+    .credit{color:#475569}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+      <div class="brand">
+        <!-- Inline SVG logo so the file fonctionne sans internet -->
+        <svg class="brand-logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="8" width="44" height="34" rx="6" fill="#04b1c7" opacity=".25"/>
+          <rect x="8" y="12" width="36" height="26" rx="4" fill="none" stroke="#04b1c7" stroke-width="3"/>
+          <rect x="16" y="46" width="24" height="6" rx="3" fill="#04b1c7"/>
+          <g fill="#f7a60a">
+            <rect x="50" y="8" width="6" height="6" rx="2"/>
+            <rect x="44" y="14" width="6" height="6" rx="2"/>
+            <rect x="56" y="14" width="6" height="6" rx="2"/>
+            <rect x="50" y="20" width="6" height="6" rx="2"/>
+          </g>
+        </svg>
+        <div class="brand-title">
+          <span class="big">JamsTech Technology Services</span>
+          <span class="small">+509 49463122 • jamstech8@gmail.com</span>
+        </div>
+      </div>
+      <div class="badge" title="Ede an Kreyòl & an Fransè">
+        <span>📍 Haïti • Nou pale Kreyòl & Fransè</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-card">
+        <div>
+          <h1 class="slogan">La tech qui vous simplifie la vie — <span style="color:var(--primary)">fiable</span>, <span style="color:var(--accent)">rapide</span> et <span style="text-decoration:underline">sécurisée</span>.</h1>
+          <p class="sub">Solutions informatiques professionnelles pour particuliers, écoles et entreprises. Ouvrez ce fichier directement dans Chrome; tout fonctionne <strong>hors‑ligne</strong> (les liens WhatsApp/E-mail s’ouvrent quand Internet disponib).</p>
+          <div class="cta">
+            <a class="btn primary" href="https://wa.me/50949463122?text=Bonjou%20JamsTech%2C%20mwen%20bezwen%20yon%20kout%20men%20tanpri." target="_blank" rel="noopener">💬 WhatsApp</a>
+            <a class="btn ghost" href="#services">Voir nos services</a>
+            <a class="btn accent" href="#decrire">Décrire votre problème</a>
+          </div>
+        </div>
+        <div>
+          <img alt="Illustration tech" src="data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8'?><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400'><defs><linearGradient id='g' x1='0' x2='1'><stop offset='0' stop-color='%23e6faff'/><stop offset='1' stop-color='%23d1f2ff'/></linearGradient></defs><rect width='600' height='400' rx='24' fill='url(%23g)'/><g fill='%2304b1c7' opacity='.6'><circle cx='120' cy='120' r='18'/><circle cx='160' cy='160' r='10'/><circle cx='200' cy='120' r='8'/></g><g fill='%23f7a60a' opacity='.9'><rect x='360' y='80' rx='10' width='180' height='110'/><rect x='380' y='210' rx='10' width='140' height='40'/></g><rect x='60' y='70' width='260' height='190' rx='18' fill='none' stroke='%2304b1c7' stroke-width='12'/><rect x='120' y='280' width='140' height='22' rx='10' fill='%2304b1c7'/></svg>"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Nos services (écrit en français)</h2>
+      <div class="grid">
+        <!-- Décodage téléphone -->
+        <article class="card">
+          <div class="icon" aria-hidden="true">📱</div>
+          <h3>Décodage de téléphone</h3>
+          <p>Déblocage / désimlockage sécurisé, récupération d’accès et optimisation des performances sans perte de données.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">Apple • Android</span>
+            <span class="chip">Sécurisé</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20je%20souhaite%20le%20service%20%3A%20D%C3%A9codage%20de%20t%C3%A9l%C3%A9phone." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+
+        <!-- Réparation ordinateurs -->
+        <article class="card">
+          <div class="icon">💻</div>
+          <h3>Réparation d’ordinateurs</h3>
+          <p>Diagnostic, remplacement de pièces (écran, clavier, batterie), suppression de virus, réinstallation système et sauvegarde.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">Windows • macOS • Linux</span>
+            <span class="chip">Pièces garanties</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20j%27ai%20besoin%20de%20la%20R%C3%A9paration%20d%27ordinateurs." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+
+        <!-- Maintenance labo -->
+        <article class="card">
+          <div class="icon">🧪</div>
+          <h3>Maintenance & configuration de laboratoires informatiques</h3>
+          <p>Conception de réseau, images systèmes, comptes centralisés, politiques de sécurité et plan de maintenance préventive.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">Écoles • Universités</span>
+            <span class="chip">PME</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20je%20veux%20la%20Maintenance%20et%20configuration%20de%20laboratoire%20informatique." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+
+        <!-- Caméras -->
+        <article class="card">
+          <div class="icon">🎥</div>
+          <h3>Installation de caméras de surveillance (CCTV)</h3>
+          <p>Étude du site, pose et calibration, enregistrement local/NVR et accès à distance chiffré.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">HD/4K</span>
+            <span class="chip">Vision nocturne</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20je%20souhaite%20une%20Installation%20de%20cam%C3%A9ras%20de%20surveillance." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+
+        <!-- Wi‑Fi entreprise -->
+        <article class="card">
+          <div class="icon">📶</div>
+          <h3>Installation Wi‑Fi d’entreprise sécurisée</h3>
+          <p>Étude radio, VLAN, portail invités, pare‑feu et supervision pour une connexion rapide et stable.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">Sécurité avancée</span>
+            <span class="chip">SLA</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20je%20demande%20l%27Installation%20Wi‑Fi%20d%27entreprise%20s%C3%A9curis%C3%A9e." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+
+        <!-- Design graphique -->
+        <article class="card">
+          <div class="icon">🎨</div>
+          <h3>Création graphique (Graphic Design)</h3>
+          <p>Logos, cartes de visite, affiches, bannières réseaux sociaux et supports marketing prêts à imprimer.</p>
+          <div style="margin-bottom:10px">
+            <span class="chip">Identité visuelle</span>
+            <span class="chip">Réseaux sociaux</span>
+          </div>
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech%2C%20je%20souhaite%20la%20Cr%C3%A9ation%20graphique." target="_blank" rel="noopener">WhatsApp ce service</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESSUS EN ÉTAPES -->
+    <section id="etapes">
+      <h2>Notre processus en 6 étapes (chak etap ak imaj)</h2>
+      <div class="grid steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h4>Demande</h4>
+            <p>Vous nous contactez (WhatsApp/E‑mail) avec une brève description du besoin.</p>
+            <img alt="Étape 1" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>1 • Demande</text></svg>">
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h4>Diagnostic</h4>
+            <p>Analyse technique et tests pour comprendre la cause du problème.</p>
+            <img alt="Étape 2" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>2 • Diagnostic</text></svg>">
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h4>Devis</h4>
+            <p>Proposition claire (prix & délai). Vous validez avant toute intervention.</p>
+            <img alt="Étape 3" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>3 • Devis</text></svg>">
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h4>Intervention</h4>
+            <p>Réparation, configuration ou installation suivant les bonnes pratiques.</p>
+            <img alt="Étape 4" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>4 • Intervention</text></svg>">
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">5</div>
+          <div>
+            <h4>Tests & validation</h4>
+            <p>Contrôles qualité, sécurité et performances avant livraison.</p>
+            <img alt="Étape 5" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>5 • Tests</text></svg>">
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">6</div>
+          <div>
+            <h4>Livraison & suivi</h4>
+            <p>Documentation, conseils et assistance post‑service si nécessaire.</p>
+            <img alt="Étape 6" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 90'><rect width='220' height='90' rx='12' fill='%23e6faff'/><text x='16' y='54' font-family='Arial' font-weight='700' font-size='18' fill='%2304b1c7'>6 • Livraison</text></svg>">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMULAIRE DESCRIPTION PROBLÈME -->
+    <section id="decrire">
+      <div class="row">
+        <div class="card">
+          <h2>Décrivez votre problème</h2>
+          <form id="problemForm">
+            <input required name="nom" placeholder="Votre nom"/>
+            <input name="email" type="email" placeholder="Votre e‑mail (optionnel)" value="jamstech8@gmail.com"/>
+            <input name="tel" placeholder="Votre téléphone (optionnel)"/>
+            <textarea required name="message" placeholder="Expliquez le souci ici (an fransè oswa an kreyòl)"></textarea>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn primary" type="submit">Envoyer par WhatsApp</button>
+              <button class="btn ghost" type="button" id="sendEmail">Envoyer par E‑mail</button>
+              <span id="formStatus" class="success" aria-live="polite"></span>
+            </div>
+          </form>
+        </div>
+
+        <!-- MINI CHAT LOCAL (hors-ligne) -->
+        <div class="chat" aria-label="Chat avec JamsTech">
+          <div class="chat-header">
+            <strong>Chat JamsTech (hors‑ligne)</strong>
+            <a class="btn ghost" href="https://wa.me/50949463122" target="_blank" rel="noopener">Ouvrir WhatsApp</a>
+          </div>
+          <div id="chatLog" class="chat-log"></div>
+          <div class="chat-input">
+            <input id="chatText" placeholder="Écrivez votre message ici…" />
+            <button class="btn primary" id="chatSend" type="button">Envoyer</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS RAPIDES -->
+    <section>
+      <div class="card">
+        <h2>Contacts rapides</h2>
+        <p>📞 <strong>+509 49463122</strong> &nbsp; | &nbsp; ✉️ <a href="mailto:jamstech8@gmail.com">jamstech8@gmail.com</a></p>
+        <div class="cta">
+          <a class="btn primary" href="https://wa.me/50949463122?text=Bonjour%20JamsTech">WhatsApp</a>
+          <a class="btn ghost" href="mailto:jamstech8@gmail.com?subject=Demande%20JamsTech">E‑mail</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div class="credit">© <span id="y"></span> — Créé par <strong>JamsTechnology Sevices</strong>.</div>
+      <div style="justify-self:end">
+        <a href="#services">↑ Retour en haut</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Année dynamique
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // --- Formulaire -> WhatsApp / Email ---
+    const f = document.getElementById('problemForm');
+    const statusEl = document.getElementById('formStatus');
+    function buildMessage(data){
+      return `Nom: ${data.get('nom')}
+Email: ${data.get('email')||''}
+Tél: ${data.get('tel')||''}
+Message: ${data.get('message')}`.trim();
+    }
+    f.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = new FormData(f);
+      const txt = encodeURIComponent(buildMessage(data));
+      const url = `https://wa.me/50949463122?text=${txt}`;
+      window.open(url, '_blank');
+      statusEl.textContent = 'Message préparé dans WhatsApp ✅';
+    });
+    document.getElementById('sendEmail').addEventListener('click', ()=>{
+      const data = new FormData(f);
+      const subject = encodeURIComponent('Demande client – JamsTech');
+      const body = encodeURIComponent(buildMessage(data));
+      window.location.href = `mailto:jamstech8@gmail.com?subject=${subject}&body=${body}`;
+      statusEl.textContent = 'Brouillon e‑mail ouvert ✉️';
+    });
+
+    // --- Mini chat local (hors-ligne) ---
+    const chatLog = document.getElementById('chatLog');
+    const chatText = document.getElementById('chatText');
+    const chatSend = document.getElementById('chatSend');
+
+    const storageKey = 'jamstech-chat-log-v1';
+    function pushMsg(text, who){
+      const div = document.createElement('div');
+      div.className = 'msg ' + (who==='user' ? 'user' : 'agent');
+      div.textContent = text;
+      chatLog.appendChild(div);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    }
+    function save(){
+      const msgs = Array.from(chatLog.querySelectorAll('.msg')).map(m=>({t:m.textContent, a:m.classList.contains('user')?'u':'a'}));
+      localStorage.setItem(storageKey, JSON.stringify(msgs));
+    }
+    function load(){
+      const raw = localStorage.getItem(storageKey);
+      if(!raw){
+        pushMsg('Bonjour! Je suis l\'assistant hors‑ligne de JamsTech. Décrivez votre besoin et cliquez en haut pour WhatsApp quand vous avez Internet.', 'agent');
+        return;
+      }
+      try{
+        JSON.parse(raw).forEach(m=>pushMsg(m.t, m.a==='u'?'user':'agent'))
+      }catch{}
+    }
+    function botReply(userText){
+      const tips = [
+        "Merci! Nous vous répondons très vite.",
+        "Pensez à joindre des photos/vidéos dans WhatsApp pour un meilleur diagnostic.",
+        "Besoin urgent? Appelez le +509 49463122.",
+      ];
+      pushMsg(tips[Math.floor(Math.random()*tips.length)], 'agent');
+      save();
+    }
+    chatSend.addEventListener('click', ()=>{
+      const t = chatText.value.trim();
+      if(!t) return;
+      pushMsg(t, 'user');
+      chatText.value='';
+      save();
+      setTimeout(()=>botReply(t), 400);
+    });
+    chatText.addEventListener('keydown', (e)=>{ if(e.key==='Enter'){ e.preventDefault(); chatSend.click(); } });
+    load();
+  </script>
+</body>
+</html>
